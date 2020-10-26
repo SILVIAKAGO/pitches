@@ -1,0 +1,39 @@
+<div class="navbar navbar-dark bg-dark" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle = "collapse" data-target = ".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+            <a class="navbar-brand" href="/" style=" font-size:25px"> PITCH</a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="/">Categories<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="/">Interviews</a></li>
+                <li><a href="/">Sports</a></li>
+                <li><a href="/">Pick up lines</a></li>
+                <li><a href="/">Politics</a></li>
+                <li><a href="/">Jokes</a></li>
+              </ul>
+    </div>
+      <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+               {% if current_user.is_authenticated %}
+
+                   <li><a href="/">{{current_user.username.capitalize()}}</a></li>
+                   <li><a href="{{url_for('auth.logout')}}"><span class="glyphicon glyphicon-log-out"></span>log out</a></li>
+
+               {%else%}
+                   <li><a href="{{url_for('auth.login')}}"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+
+               {%endif%}
+                <li class="nav-item"><a class="nav-link waves-effect waves-light" href="https://twitter.com/explore"><i class="fab fa-twitter"></i></a></li>
+                <li class="nav-item"><a class="nav-link waves-effect waves-light" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link waves-effect waves-light" href="https://github.com/"><i class="fab fa-github"></i></a></li>
+                <li class="nav-item"><a class="nav-link waves-effect waves-light" href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+       </div>
+
+  </div>
+</div>
