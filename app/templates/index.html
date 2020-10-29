@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro %}
+
+<!-- styles block -->
+{% block styles %}
+    {{ super() }}    
+     <!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
+<!-- Bootstrap core CSS -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- Material Design Bootstrap -->
+<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">  -->
+<!-- stylesheet -->
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+      <p><strong style="justify-content: center;font-size: larger;">In just 60 seconds test your skills and write a pitch</strong></p>
+        <h1><a href="/add/category" class="btn btn-gradient"><i class="fas fa-plus">Add</i> Category</a></h1>
+        {{ macro.displayCategoryList(categories) }}
+    </div>
+{% endblock %}
+
+{% macro displayPitches(pitch_list) %}
+  {% for pitches in pitch_list %}
+    <div class="col-md-6">
+      <div class="well">
+        <div class="row">
+          <div class="col-md-6">
+              <h3>{{pitches.content}}</h3>
+          </div>
+          <div class="col-md-6">
+            <p>POSTED: {{pitches.date_posted.strftime('%Y/%m/%d || %r')}}</p>
+            <a href="/pitch/{{pitches.id}}"><h4>COMMENT</h4></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endmacro %}
+
+
+
+
+
+
+
+
