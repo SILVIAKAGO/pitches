@@ -52,7 +52,7 @@ This is a web application that allows various users to submit a short pitch. Use
 
 # Support and Contacts
 
-In case You have any issues using this code please do no hesitate to get in touch with me through maratah7@gmail.com or leave a commit here on github.
+In case You have any issues using this code please do no hesitate to get in touch with me through deejaykayslyk@gmail.com or leave a commit here on github.
 
 
 ## Known Bugs
